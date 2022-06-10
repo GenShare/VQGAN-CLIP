@@ -98,7 +98,8 @@ vq_parser.add_argument("-cd",   "--cuda_device", type=str, help="Cuda device to 
 args = vq_parser.parse_args()
 
 if not args.prompts and not args.image_prompts:
-    args.prompts = "A cute, smiling, Nerdy Rodent"
+    # args.prompts = "A cute, smiling, Nerdy Rodent"
+    pass
 
 if args.cudnn_determinism:
    torch.backends.cudnn.deterministic = True
@@ -678,6 +679,9 @@ opt = get_opt(args.optimiser, args.step_size)
 # Output for the user
 print('Using device:', device)
 print('Optimising using:', args.optimiser)
+
+if not any([args.prompts, args.image_prompts, args.init_image, args.noise_prompt_weights]):
+    exit(0)
 
 if args.prompts:
     print('Using text prompts:', args.prompts)  
