@@ -121,8 +121,6 @@ To generate images from text, specify your text prompt as shown in the example b
 python generate.py -p "A painting of an apple in a fruit bowl"
 ```
 
-<img src="./samples/A_painting_of_an_apple_in_a_fruitbowl.png" width="256px"></img>
-
 ## Multiple prompts
 
 Text and image prompts can be split using the pipe symbol in order to allow multiple prompts.
@@ -131,8 +129,6 @@ You can also use a colon followed by a number to set a weight for that prompt. F
 ```sh
 python generate.py -p "A painting of an apple in a fruit bowl | psychedelic | surreal:0.5 | weird:0.25"
 ```
-
-<img src="./samples/Apple_weird.png" width="256px"></img>
 
 Image prompts can be split in the same way. For example:
 
@@ -156,13 +152,6 @@ An input image with style text and a low number of iterations can be used create
 ```sh
 python generate.py -p "A painting in the style of Picasso" -ii samples/VanGogh.jpg -i 80 -se 10 -opt AdamW -lr 0.25
 ```
-
-| Output                                                        | Style       |
-| ------------------------------------------------------------- | ----------- |
-| <img src="./samples/vvg_picasso.png" width="256px"></img>     | Picasso     |
-| <img src="./samples/vvg_sketch.png" width="256px"></img>      | Sketch      |
-| <img src="./samples/vvg_psychedelic.png" width="256px"></img> | Psychedelic |
-
 A video style transfer effect can be achived by specifying a directory of video frames in `video_style_dir`. Output will be saved in the steps directory, using the original video frame filenames. You can also use this as a sort of "batch mode" if you have a directory of images you want to apply a style to. This can also be combined with Story Mode if you don't wish to apply the same style to every images, but instead roll through a list of styles.
 
 ## Feedback example
@@ -176,8 +165,6 @@ To use `zoom.sh`, specifying a text prompt, output filename and number of frames
 ./zoom.sh "A painting of a red telephone box spinning through a time vortex" Telephone.png 150
 ```
 If you don't have ImageMagick installed, you can install it with ```sudo apt install imagemagick```
-
-<img src="./samples/zoom.gif" width="256px"></img>
 
 There is also a simple zoom video creation option available. For example:
 ```sh
